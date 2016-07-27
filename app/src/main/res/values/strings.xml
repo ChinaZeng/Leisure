@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">闲 暇</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="blog_name">www.cnblogs.com/zzw1994</string>
+
+    <string name="empty_show">加载数据失败</string>
+
+    <string name="smile_a_smile">笑一笑</string>
+    <string name="news">微信精选</string>
+    <string name="luck">运势</string>
+    <string name="life">生活服务</string>
+    <string name="today_in_history">历史上的今天</string>
+
+    <style name="other">其他</style>
+
+
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="dialog_title_prompt">温馨提示</string>
+    <string name="dialog_msg_save_file">是否保存文件？</string>
+    <string name="toast_file_save_path">保存成功,保存目录%s</string>
+    <string name="savaing">正在保存</string>
+
+    <string name="toast_file_save_error">保存失败</string>
+
+
+    <!--笑一笑-->
+    <string name="joke_text">笑话</string>
+    <string name="joke_pic">趣图</string>
+
+    <!--运势-->
+    <string name="constellation">星座运势</string>
+    <string name="duke_of_zhou_interprets">周公解梦</string>
+    <string name="stuff">老黄历</string>
+
+    <!-- 生活服务-->
+    <string name="postalcode">邮政编码</string>
+    <string name="parities">汇率</string>
+    <string name="mobile_phone_number_belong_to">手机号码归属地</string>
+    <string name="bus_query">公交信息查询</string>
+    <string name="long_bus_query">长途汽车信息查询</string>
+    <string name="TV_time_table">电视节目时间表</string>
+
+    <string name="gank_hint_exit_app">在按一次退出</string>
+    <string name="url_error">无效链接</string>
+    <string name="details">详情</string>
+    <string name="stuff_hour_luck">时辰老黄历</string>
+
+    <string name="luck_today">今日运势</string>
+    <string name="luck_tomorrow">明日运势</string>
+    <string name="luck_week">本周运势</string>
+    <string name="luck_next_week">下周运势</string>
+    <string name="luck_month">本月运势</string>
+    <string name="luck_year">今年运势</string>
+
+    <string name="composite">综合指数：&#160;%s</string>
+    <string name="health_index">健康指数：&#160;%s</string>
+    <string name="love_index">爱情指数：&#160;%s</string>
+    <string name="money_index">财运指数：&#160;%s</string>
+    <string name="luck_number">幸运指数：&#160;%d</string>
+    <string name="QFriend">速配星座：&#160;%s</string>
+    <string name="work_index">工作指数：&#160;%s</string>
+    <string name="luck_color">幸运色：&#160;%s</string>
+
+    <string name="health_">健康：&#160;%s</string>
+    <string name="job_">求职：&#160;%s</string>
+    <string name="love_">恋情：&#160;%s</string>
+    <string name="money_">财运：&#160;%s</string>
+    <string name="work_">工作：&#160;%s</string>
+    <string name="all_">综合：&#160;%s</string>
+
+    <string name="year_date_hint">%1$s：&#160;%2$s</string>
+    <string name="text_">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%s</string>
+    <string name="career_">职业：&#160;%s</string>
+    <string name="finance_">金融：&#160;%s</string>
+    <string name="luckyStone_">幸运石：&#160;%s</string>
+
+    <array name="conLuckArray">
+        <item>水瓶座（1月21日 - 2月19日）</item>
+        <item>双鱼座（2月20日 - 3月20日）</item>
+        <item>白羊座（3月21日 - 4月20日）</item>
+        <item>金牛座（4月21日 - 5月21日）</item>
+        <item>双子座（5月22日 - 6月21日）</item>
+        <item>巨蟹座（6月22日 - 7月22日）</item>
+        <item>狮子座（7月23日 - 8月22日）</item>
+        <item>处女座（8月23日 - 9月22日）</item>
+        <item>天秤座（9月23日 - 10月23日）</item>
+        <item>天蝎座（10月24日 - 11月22日）</item>
+        <item>射手座（11月23日 - 12月21日）</item>
+        <item>摩羯座（12月22日 - 1月20日）</item>
+    </array>
+
+    <string name="long_bus_start_">出站车站：&#160;%s</string>
+    <string name="long_bus_arrive_">到达车站：&#160;%s</string>
+    <string name="long_bus_date_">出站时间：&#160;%s</string>
+    <string name="long_bus_price_">车票价格：&#160;%s</string>
+    <string name="from_city_">出发城市:</string>
+    <string name="to_city_">到达城市:</string>
+    <string name="cheng_du">成都</string>
+    <string name="hui_dong">会东</string>
+    <string name="query">查询</string>
+    <string name="please_edit_long_bus">请输入起点或者终点</string>
+    <string name="other">其他</string>
+    <string name="share">分享</string>
+    <string name="about">关于</string>
+
+    <string name="please_edit_key_string">请输入关键字</string>
+    <string name="jiemeng">解梦</string>
+    <string name="shake">蛇</string>
+    <string name="no_this_information">暂无此信息</string>
+
+
+    <string name="yang_li_">阳历：&#160;%s</string>
+    <string name="yinli_">阴历：&#160;%s</string>
+    <string name="wuxing_">五行：&#160;%s</string>
+    <string name="chongsha_">冲煞：&#160;%s</string>
+    <string name="baiji_">彭祖百忌：&#160;%s</string>
+    <string name="jishen_">吉神宜趋：&#160;%s</string>
+    <string name="yi_">宜：&#160;%s</string>
+    <string name="xiongshen_">凶神宜忌：&#160;%s</string>
+    <string name="ji_">忌：&#160;%s</string>
+    <string name="click_into_hour_stuff">点击查看时辰黄历</string>
+
+    <string name="hours_">时辰：&#160;%s</string>
+    <string name="des_">描述：&#160;%s</string>
+    <string name="picture">图片</string>
+
+</resources>

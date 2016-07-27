@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_news"
+            android:title="@string/news" />
+        <item
+            android:id="@+id/nav_smile_a_smile"
+            android:icon="@drawable/ic_small_a_small"
+            android:title="@string/smile_a_smile" />
+
+        <item
+            android:id="@+id/nav_picture"
+            android:icon="@drawable/ic_picture"
+            android:title="@string/picture" />
+        <item
+            android:id="@+id/nav_luck"
+            android:icon="@drawable/ic_luck"
+            android:title="@string/luck" />
+        <item
+            android:id="@+id/nav_life"
+            android:icon="@drawable/ic_life"
+            android:title="@string/life" />
+        <item
+            android:id="@+id/nav_today_in_history"
+            android:icon="@drawable/ic_history"
+            android:title="@string/today_in_history" />
+    </group>
+
+    <item android:title="@string/other">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@android:drawable/ic_menu_share"
+                android:title="@string/share" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/about" />
+        </menu>
+    </item>
+
+</menu>

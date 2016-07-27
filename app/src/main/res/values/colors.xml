@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--#303F9F-->
+    <color name="colorPrimary">#2282ae</color>
+    <color name="colorPrimaryDark">#2282ae</color>
+    <color name="colorAccent">#2282ae</color>
+    <!-- app:tabIndicatorColor 指示器（字体下面的那一个横）显示颜色 -->
+    <!-- app:tabSelectedTextColor 选中的字体颜色 -->
+    <!-- app:tabTextColor 未选中的字体颜色 -->
+    <color name="tabIndicatorColor">#FFFFFF</color>
+    <color name="tabSelectedTextColor">#FFFFFF</color>
+    <color name="tabTextColor">#9f9d9d</color>
+    <color name="tabBGColor">#31dc4b</color>
+
+    <color name="newsItemBg">#96d6d9bd</color>
+    <color name="newsItemSource">#26dff7</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+</resources>
