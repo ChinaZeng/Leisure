@@ -6,6 +6,7 @@ import android.os.Environment;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.zzw.MyApp.Constans;
 import com.zzw.MyApp.MyApplication;
@@ -78,6 +79,7 @@ public class ImageActivity extends BaseActivity {
             //显示dialog
             showProgressDialog(getString(R.string.savaing));
             final Bitmap bitmap = ((GlideBitmapDrawable) photoView.getDrawable()).getBitmap();
+
             //save Image
             new Thread(new Runnable() {
                 @Override
