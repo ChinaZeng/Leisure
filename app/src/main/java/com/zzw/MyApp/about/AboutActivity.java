@@ -6,7 +6,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.zzw.MyApp.R;
+import com.zzw.MyApp.UI;
 import com.zzw.MyApp.base.BaseActivity;
+import com.zzw.MyApp.wedgit.matchView.MatchButton;
 import com.zzw.MyApp.wedgit.matchView.MatchTextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -18,7 +20,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AboutActivity extends BaseActivity {
 
     private View about_logo;
-    private MatchTextView text1, text2;
+    private MatchTextView text1;
+    private MatchButton text2,text3;
 
     @Override
     protected int getLayoutId() {
@@ -36,7 +39,8 @@ public class AboutActivity extends BaseActivity {
         backImage.setOnClickListener(this);
         about_logo = findViewById(R.id.about_logo);
         text1 = (MatchTextView) findViewById(R.id.about_text1);
-        text2 = (MatchTextView) findViewById(R.id.about_text2);
+        text2 = (MatchButton) findViewById(R.id.about_text2);
+        text3=(MatchButton) findViewById(R.id.about_text3);
     }
 
 

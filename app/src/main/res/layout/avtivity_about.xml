@@ -26,19 +26,27 @@
             android:id="@+id/about_text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             app:text="@string/app_name"
             app:textColor="@android:color/white"
             app:textSize="20sp" />
 
 
-        <com.zzw.MyApp.wedgit.matchView.MatchTextView
+        <com.zzw.MyApp.wedgit.matchView.MatchButton
             android:id="@+id/about_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text="@string/blog_name"
             app:textColor="@android:color/white"
             app:textSize="14sp" />
+
+
+        <com.zzw.MyApp.wedgit.matchView.MatchButton
+            android:id="@+id/about_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="@string/github_name"
+            app:textColor="@android:color/white"
+            app:textSize="12sp" />
 
     </LinearLayout>
 

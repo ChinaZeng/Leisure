@@ -1,20 +1,17 @@
 package com.zzw.MyApp.common;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.zzw.MyApp.Constans;
 import com.zzw.MyApp.MyApplication;
 import com.zzw.MyApp.R;
 import com.zzw.MyApp.UI;
 import com.zzw.MyApp.base.BaseActivity;
 import com.zzw.MyApp.operate.Image.ImageLoadClass;
-import com.zzw.MyApp.utils.BitmapUtils;
+import com.zzw.MyApp.utils.FileUtils;
 import com.zzw.MyApp.utils.StringUtils;
 import com.zzw.MyApp.wedgit.photoView.PhotoView;
 import com.zzw.MyApp.wedgit.photoView.PhotoViewAttacher;
@@ -78,19 +75,27 @@ public class ImageActivity extends BaseActivity {
         try {
             //显示dialog
             showProgressDialog(getString(R.string.savaing));
-            final Bitmap bitmap = ((GlideBitmapDrawable) photoView.getDrawable()).getBitmap();
-
             //save Image
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    final String savaPath = Constans.IMAGE_SAVA_PATH;
-                    final boolean saveBitmapToSD = BitmapUtils.saveBitmapToSD(bitmap, savaPath, StringUtils.getUUID() + ".jpg", true);
+                    File srcFile = ImageLoadClass.getGlideFile(ImageActivity.this, imagePath);
+                    String savaPath = null;
+                    if (imagePath.endsWith("gif")) {
+                        savaPath = Constans.IMAGE_SAVA_PATH + File.separator
+                                + StringUtils.getUUID() + ".gif";
+                    } else {
+                        savaPath = Constans.IMAGE_SAVA_PATH + File.separator
+                                + StringUtils.getUUID() + ".jpeg";
+                    }
+                    File savaFile = new File(savaPath);
+                    final boolean isSava = FileUtils.copyfile(srcFile, savaFile, true);
+                    final String finalSavaPath = savaPath;
                     MyApplication.getHandler().post(new Runnable() {
                         @Override
                         public void run() {
-                            if (saveBitmapToSD) {
-                                showProgressSuccess(getString(R.string.toast_file_save_path, savaPath));
+                            if (isSava) {
+                                showProgressSuccess(getString(R.string.toast_file_save_path, finalSavaPath));
                             } else {
                                 showProgressError(getString(R.string.toast_file_save_error));
                             }

@@ -124,7 +124,7 @@ public class MainActivity extends BaseActivity
                 setMenuSelection(5);
                 break;
             case R.id.nav_share:
-                UI.shareText(this, getString(R.string.blog_name));
+                UI.shareText(this, getString(R.string.github_name));
                 break;
             case R.id.nav_about:
                 UI.showAboutActivity(this);

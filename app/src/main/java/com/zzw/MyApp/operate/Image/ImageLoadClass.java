@@ -5,7 +5,11 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.target.Target;
 import com.zzw.MyApp.R;
+
+import java.io.File;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by zzw on 2016/6/15.
@@ -26,4 +30,13 @@ public class ImageLoadClass {
                 into(imageView);
     }
 
+
+    public static File getGlideFile(Activity activity, String url) {
+        try {
+            return Glide.with(activity).load(url).downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
