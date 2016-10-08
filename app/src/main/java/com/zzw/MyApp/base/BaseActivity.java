@@ -49,9 +49,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (getLayoutId() != 0) {
             setContentView(getLayoutId());
         }
+        initView();
         init(savedInstanceState);
         initDialog();
-        initView();
         initData();
     }
 

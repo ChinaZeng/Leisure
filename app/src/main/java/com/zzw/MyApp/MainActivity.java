@@ -1,6 +1,9 @@
 package com.zzw.MyApp;
 
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,7 +25,10 @@ import com.zzw.MyApp.picture.GalleryClassFragment;
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private final static String FLOG = "flog";
+
     private DrawerLayout drawer;
+    private NavigationView navigationView;
 
     private ImageView toolbarLeftImage;
     private TextView toolbarTitleText;
@@ -30,11 +36,33 @@ public class MainActivity extends BaseActivity
     private Fragment newsFragment, jokeFragment, luckFragment, lifeFragment, historyFragment, galleryClassFragment;
 
 
+    private int flag = 0;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
 
+    @Override
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+        if (savedInstanceState == null) {
+            setDefault(navigationView);
+        } else {
+            newsFragment = getSupportFragmentManager().findFragmentByTag(NewsFragment.class.getName());
+            jokeFragment = getSupportFragmentManager().findFragmentByTag(JokeFragment.class.getName());
+            luckFragment = getSupportFragmentManager().findFragmentByTag(LuckFragment.class.getName());
+            historyFragment = getSupportFragmentManager().findFragmentByTag(HistoryFragment.class.getName());
+            galleryClassFragment = getSupportFragmentManager().findFragmentByTag(GalleryClassFragment.class.getName());
+            setMenuSelection(savedInstanceState.getInt(FLOG));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(FLOG, flag);
+    }
 
     @Override
     protected void initView() {
@@ -42,9 +70,8 @@ public class MainActivity extends BaseActivity
         toolbarLeftImage = (ImageView) findViewById(R.id.toolbar_left);
         toolbarTitleText = (TextView) findViewById(R.id.toolbar_title);
         toolbarLeftImage.setOnClickListener(this);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        setDefault(navigationView);
     }
 
 
@@ -146,6 +173,7 @@ public class MainActivity extends BaseActivity
 
     private void setMenuSelection(int flag) {
 
+        this.flag = flag;
         setToolbar(flag);
 
         // 开启一个Fragment事务
@@ -154,10 +182,9 @@ public class MainActivity extends BaseActivity
         hideFragments(fragmentTransaction);
         switch (flag) {
             case 0:
-
                 if (newsFragment == null) {
                     newsFragment = NewsFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, newsFragment);
+                    fragmentTransaction.add(R.id.main_frame, newsFragment, NewsFragment.class.getName());
                 } else {
                     fragmentTransaction.show(newsFragment);
                 }
@@ -165,7 +192,7 @@ public class MainActivity extends BaseActivity
             case 1:
                 if (jokeFragment == null) {
                     jokeFragment = JokeFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, jokeFragment);
+                    fragmentTransaction.add(R.id.main_frame, jokeFragment, JokeFragment.class.getName());
                 } else {
                     fragmentTransaction.show(jokeFragment);
                 }
@@ -174,7 +201,7 @@ public class MainActivity extends BaseActivity
             case 2:
                 if (luckFragment == null) {
                     luckFragment = LuckFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, luckFragment);
+                    fragmentTransaction.add(R.id.main_frame, luckFragment, LuckFragment.class.getName());
                 } else {
                     fragmentTransaction.show(luckFragment);
                 }
@@ -183,7 +210,7 @@ public class MainActivity extends BaseActivity
             case 3:
                 if (lifeFragment == null) {
                     lifeFragment = LifeFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, lifeFragment);
+                    fragmentTransaction.add(R.id.main_frame, lifeFragment, LifeFragment.class.getName());
                 } else {
                     fragmentTransaction.show(lifeFragment);
                 }
@@ -192,7 +219,7 @@ public class MainActivity extends BaseActivity
             case 4:
                 if (historyFragment == null) {
                     historyFragment = HistoryFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, historyFragment);
+                    fragmentTransaction.add(R.id.main_frame, historyFragment, HistoryFragment.class.getName());
                 } else {
                     fragmentTransaction.show(historyFragment);
                 }
@@ -201,12 +228,11 @@ public class MainActivity extends BaseActivity
             case 5:
                 if (galleryClassFragment == null) {
                     galleryClassFragment = GalleryClassFragment.newInstance();
-                    fragmentTransaction.add(R.id.main_frame, galleryClassFragment);
+                    fragmentTransaction.add(R.id.main_frame, galleryClassFragment, GalleryClassFragment.class.getName());
                 } else {
                     fragmentTransaction.show(galleryClassFragment);
                 }
                 break;
-
         }
         fragmentTransaction.commit();
     }
